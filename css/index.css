@@ -1,0 +1,77 @@
+html, body, div, h1, ul, li, form, input, a, span, p{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body{
+	direction: rtl;
+	background-color: #eceff0;
+}
+
+/*Container*/
+.container{
+	background-color: #fff;
+	margin: 20px auto;
+	max-width: 500px;
+	padding: 20px;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
+
+.container .header{
+	margin: 0 0 10px 0;
+}
+
+.container .error{
+	font-size: 12px;
+	color: #cc0000;
+}
+
+/*tasks*/
+.tasks{
+	list-style-type: none;
+}
+
+.tasks li,
+.add-task .input{
+	border-bottom: 1px dashed #ccc;
+	padding: 15px 0;
+}
+
+.tasks .task.done{
+	text-decoration: line-through;
+}
+
+.tasks .date{
+	margin-top: 7px;
+    font-size: 13px;
+}
+
+.tasks .task-buttons{
+	text-decoration: none;
+	background-color: #d9dfe1;
+	color: #363639;
+	border-bottom: 1px dashed;
+	padding: 3px 6px;
+	opacity: 0.4;
+}
+
+/*add-task form*/
+.add-task .input{
+	width: 100%;
+}
+
+.add-task .input:focus{
+	outline: none;
+}
+
+/*Submit*/
+.add-task .submit{
+	background-color: #fff;
+	padding: 5px 10px;
+	border: 1px solid #ddd;
+	width: 100%;
+	margin-top: 10px;
+	box-shadow: 3px 3px 0 #ddd;
+}
