@@ -2,7 +2,7 @@
 	if($_SERVER['REQUEST_METHOD'] === 'GET'){
 		require 'app/init.php';
 		$user_id = $_SESSION['user_id'];
-		$getTasks_query = "SELECT id, name, done, due_date FROM tasks WHERE user_id = $user_id";
+		$getTasks_query = "SELECT id, description, done, due_date FROM tasks WHERE user_id = $user_id";
 		$result = $connection->query($getTasks_query);
 		$tasks = $result->num_rows > 0 ? $result : [];
 	}
@@ -20,7 +20,7 @@
 				<ul class="tasks">
 					<?php foreach ($tasks as $task): ?>
 						<li>
-							<span class="task <?= $task['done'] ? 'done' : ''?>"><?= $task['name']?></span>
+							<span class="task <?= $task['done'] ? 'done' : ''?>"><?= $task['description']?></span>
 							<?php if(!$task['done']):?>
 								<a href="app/mark.php?task_id=<?= $task['id']?>" class="task-buttons">تمَ الإنجاز</a>
 							<?php else:?>
@@ -41,7 +41,7 @@
 				<?php $_SESSION['errors'] = [];?>
 			<?php endif;?>
 			<form class="add-task" action="app/add.php" method="post">
-				<input type="text" name="name" placeholder="أدخل وصف لمهمة جديدة هنا" class="input">
+				<input type="text" name="task_name" placeholder="أدخل وصف لمهمة جديدة هنا" class="input">
 				<input type="text" name="due_date" placeholder="أدخل آخر تاريخ لإنجاز المهمة، مثال: 1-1-2014" class="input">
 				<input type="submit" value="أضف" class="submit">
 			</form> 
